@@ -1,4 +1,4 @@
-def grading_scale(student_score: int, best_score: int) -> str:
+def grading_scale(student_score: float, best_score: int) -> str:
     """
     Determines the grade of a student based on their score.
     """
@@ -12,3 +12,4 @@ def grading_scale(student_score: int, best_score: int) -> str:
         return 'D'
     else:
         return 'F'
+
