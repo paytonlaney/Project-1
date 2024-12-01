@@ -5,7 +5,7 @@ from grading import grading_scale
 class GradingApp:
     def __init__(self, root):
         """
-        Sets the GUI components for the grading system.
+        Sets up the gui for the grading system.
         """
         self.root = root
         self.root.title("Student Grading System")
@@ -19,7 +19,7 @@ class GradingApp:
 
     def create_widgets(self):
         """
-        Creates the widgets for the GUI.
+        Creates the widgets for the gui.
         """
         # Label
         self.instruction_label = tk.Label(self.root, text="Enter the student's name and their scores",
@@ -55,7 +55,7 @@ class GradingApp:
 
     def add_score_fields(self):
         """
-        Dynamically adds score input fields based on the number of scores.
+        Adds score inputs based on the number of scores.
         """
         try:
             num_scores = int(self.num_scores_entry.get())
@@ -119,10 +119,9 @@ class GradingApp:
         except Exception as e:
             messagebox.showerror("Unexpected Error", f"An error occurred: {e}")
 
-# Place the run_app function here
 def run_app():
     """
-    Initializes and runs the GUI application.
+    Initializes the gui application.
     """
     root = tk.Tk()
     app = GradingApp(root)
