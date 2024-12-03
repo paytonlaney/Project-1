@@ -26,14 +26,14 @@ class GradingApp:
                                           font=("Arial", 12))
         self.instruction_label.pack(pady=10)
 
-        # Name Entry
+        # Name
         self.name_label = tk.Label(self.root, text="Student Name:")
         self.name_label.pack(pady=5)
 
         self.name_entry = tk.Entry(self.root)
         self.name_entry.pack(pady=5)
 
-        # Number of Scores Entry
+        # Number of Scores
         self.num_scores_label = tk.Label(self.root, text="Number of Scores:")
         self.num_scores_label.pack(pady=5)
 
@@ -63,7 +63,7 @@ class GradingApp:
                 messagebox.showwarning("Input Error", "Number of scores must be between 1 and 4.")
                 return
 
-            # Clear any previous score fields
+            # Clear previous score fields
             if hasattr(self, "score_entries"):
                 for entry in self.score_entries:
                     entry.destroy()
@@ -81,7 +81,7 @@ class GradingApp:
 
     def submit_data(self):
         """
-        Validates the input, computes grades, and displays the results.
+        Validates the input, averages grades, and displays the results.
         """
         try:
             name = self.name_entry.get().strip()
@@ -121,7 +121,7 @@ class GradingApp:
 
 def run_app():
     """
-    Initializes the gui application.
+    Completes the gui application.
     """
     root = tk.Tk()
     app = GradingApp(root)
