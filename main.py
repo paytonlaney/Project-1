@@ -2,7 +2,7 @@ from gui import run_app
 
 def main():
     """
-    Starts running the gui application.
+    Starts running the gui application
     """
     run_app()
 
