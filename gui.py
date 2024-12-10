@@ -6,13 +6,13 @@ from grading import grading_scale
 class GradingApp:
     def __init__(self, root):
         """
-        Sets up the gui for the grading system
+        Sets up the gui for grading
         """
         self.root = root
         self.root.title("Student Grading System")
         self.root.geometry("350x600")
 
-        #Scrollable Frame
+        #Scrollable Window
         self.canvas = tk.Canvas(self.root)
         self.scrollbar = tk.Scrollbar(self.root, orient="vertical", command=self.canvas.yview)
         self.scrollable_frame = tk.Frame(self.canvas)
@@ -34,7 +34,7 @@ class GradingApp:
 
     def update_scroll_region(self, event=None):
         """
-        Updates the scroll of the canvas to include all score fields
+        Updates the scroll of the window to include all score fields
         """
         self.canvas.configure(scrollregion=self.canvas.bbox("all"))
 
