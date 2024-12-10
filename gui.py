@@ -34,7 +34,7 @@ class GradingApp:
 
     def update_scroll_region(self, event=None):
         """
-        Updates the scroll of the canvas to include all widgets
+        Updates the scroll of the canvas to include all score fields
         """
         self.canvas.configure(scrollregion=self.canvas.bbox("all"))
 
@@ -76,7 +76,7 @@ class GradingApp:
         self.result_label = tk.Label(self.scrollable_frame, text="Grades will be displayed here.", font=("Arial", 10), justify=tk.LEFT)
         self.result_label.pack(pady=10)
 
-        #Store created labels and entries
+        #Store labels and entries
         self.score_labels = []
         self.score_entries = []
 
@@ -106,7 +106,7 @@ class GradingApp:
 
     def submit_data(self):
         """
-        Validates the user input, saves data to the txt file, averages grades, and displays the results
+        Validates the user input, saves data to the txt file, averages grades into letters and displays them
         """
         try:
             name = self.name_entry.get().strip()
@@ -150,12 +150,12 @@ class GradingApp:
 
     def reset_gui(self):
         """
-        Resets the gui by clearing all input, scores, and results
+        Resets the gui by clearing all inputs and textboxes
         """
-        #Clear name entry
+        #Clear name
         self.name_entry.delete(0, tk.END)
 
-        #Clear number of scores entry
+        #Clear number of scores
         self.num_scores_entry.delete(0, tk.END)
 
         #Clear score fields
